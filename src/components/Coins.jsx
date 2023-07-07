@@ -1,6 +1,5 @@
 import React from 'react'
 import CoinItem from './CoinItem'
-import './Coins.css'
 
 
 const Coins = (props) => {
@@ -9,7 +8,7 @@ const Coins = (props) => {
             <div>
                 <div class="flex justify-between items-center mx-5 my-3 py-1 border-white border-b-2 font-bold">
                     <p>#</p>
-                    <p className='coin-name'>Coin</p>
+                    <p class="-ml-16">Coin</p>
                     <p>Price</p>
                     <p>24h</p>
                     <p class="invisible md:visible">Volume</p>
