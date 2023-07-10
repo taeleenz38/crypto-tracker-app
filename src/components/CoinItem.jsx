@@ -6,12 +6,12 @@ const CoinItem = (props) => {
             <p class="font-bold flex items-center">{props.coins.market_cap_rank}</p>
             <div class="flex items-center">
                 <img class="h-12" src={props.coins.image} alt="coin-logo" />
-                <p class="ml-2">{props.coins.symbol}</p>
+                <p class="ml-2">{props.coins.symbol.toUpperCase()}</p>
             </div>
-            <p class="flex items-center">${props.coins.current_price}</p>
-            <p class="flex items-center">{props.coins.price_change_percentage_24h}%</p>
-            <p class="flex items-center invisible md:visible">${props.coins.total_volume}</p>
-            <p class="flex items-center invisible md:visible">${props.coins.market_cap}</p>
+            <p class="flex items-center">${props.coins.current_price.toLocaleString()}</p>
+            <p class="flex items-center">{props.coins.price_change_percentage_24h.toFixed(2)}%</p>
+            <p class="flex items-center invisible md:visible">${props.coins.total_volume.toLocaleString()}</p>
+            <p class="flex items-center invisible md:visible">${props.coins.market_cap.toLocaleString()}</p>
 
         </div>
     )
