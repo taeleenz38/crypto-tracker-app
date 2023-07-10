@@ -2,16 +2,16 @@ import React from 'react'
 
 const CoinItem = (props) => {
     return (
-        <div class="flex justify-between items-center mx-5 my-5 py-1 border-gray-700 border-2">
-            <p class="font-bold">{props.coins.market_cap_rank}</p>
-            <div className="img-symbol">
-                <img src={props.coins.image} alt="coin-logo" />
-                <p>{props.coins.symbol}</p>
+        <div class="grid grid-cols-6 mx-5 my-5 p-3 border-gray-700 border-2 rounded-lg hover:scale-105 duration-200 cursor-pointer">
+            <p class="font-bold flex items-center">{props.coins.market_cap_rank}</p>
+            <div class="flex items-center">
+                <img class="h-12" src={props.coins.image} alt="coin-logo" />
+                <p class="ml-2">{props.coins.symbol}</p>
             </div>
-            <p>${props.coins.current_price}</p>
-            <p>{props.coins.price_change_percentage_24h}%</p>
-            <p class="invisible md:visible">${props.coins.total_volume}</p>
-            <p class="invisible md:visible">${props.coins.market_cap}</p>
+            <p class="flex items-center">${props.coins.current_price}</p>
+            <p class="flex items-center">{props.coins.price_change_percentage_24h}%</p>
+            <p class="flex items-center invisible md:visible">${props.coins.total_volume}</p>
+            <p class="flex items-center invisible md:visible">${props.coins.market_cap}</p>
 
         </div>
     )

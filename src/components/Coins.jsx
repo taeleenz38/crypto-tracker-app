@@ -6,9 +6,9 @@ const Coins = (props) => {
     return (
         <div class="w-5/6 m-auto">
             <div>
-                <div class="flex justify-between items-center mx-5 my-3 py-1 border-white border-b-2 font-bold">
+                <div class="grid grid-cols-6 mx-5 my-3 py-1 px-2 border-white border-b-2 font-bold">
                     <p>#</p>
-                    <p class="-ml-16">Coin</p>
+                    <p>Coin</p>
                     <p>Price</p>
                     <p>24h</p>
                     <p class="invisible md:visible">Volume</p>
