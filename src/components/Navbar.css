@@ -5,7 +5,15 @@
 
 }
 
+.navbar h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
 .icon {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #6900ff;
+    margin-right: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
