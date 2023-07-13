@@ -64,43 +64,32 @@ const Coin = () => {
           </table>
         </div>
 
-        <div className='content'>
-          <div className='stats'>
-            <div className='left'>
-              <div className='row'>
-                <h4>24 Hour Low</h4>
-                {coin.market_data?.low_24h ? <p>${coin.market_data.low_24h.usd.toLocaleString()}</p> : null}
-              </div>
-              <div className='row'>
-                <h4>24 Hour High</h4>
-                {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}                            </div>
-
-            </div>
-            <div className='right'>
-              <div className='row'>
-                <h4>Market Cap</h4>
-                {coin.market_data?.market_cap ? <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
-              </div>
-              <div className='row'>
-                <h4>Circulating Supply</h4>
-                {coin.market_data ? <p>{coin.market_data.circulating_supply}</p> : null}
-              </div>
-
-            </div>
+        <div class="w-6/12 mx-auto mt-8 text-center flex justify-around font-light">
+          <div>
+            <h4 class="text-lg font-semibold">24 Hour Low</h4>
+            {coin.market_data?.low_24h ? <p>${coin.market_data.low_24h.usd.toLocaleString()}</p> : null}
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">24 Hour High</h4>
+            {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">Market Cap</h4>
+            {coin.market_data?.market_cap ? <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold">Circulating Supply</h4>
+            {coin.market_data ? <p>{coin.market_data.circulating_supply.toLocaleString()} tokens</p> : null}
           </div>
         </div>
 
-        <div className='content'>
-          <div className='about'>
+          <div class="">
             <h3>About</h3>
             <p dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),
             }}>
-
             </p>
-
           </div>
-        </div>
 
 
       </div>
