@@ -31,10 +31,10 @@ const Coin = () => {
             <div class="flex items-center text-xl">
               {coin.image ? <img class="mr-2" src={coin.image.small} alt='' /> : null}
               <p class="mr-2">{coin.name}</p>
-              {coin.symbol ? <p>{coin.symbol.toUpperCase()}/USD</p> : null}
+              {coin.symbol ? <p>{coin.symbol.toUpperCase()}/AUD</p> : null}
             </div>
             <div>
-              {coin.market_data?.current_price ? <h1 class="text-2xl font-bold">${coin.market_data.current_price.usd.toLocaleString()}</h1> : null}
+              {coin.market_data?.current_price ? <h1 class="text-2xl font-bold">${coin.market_data.current_price.aud.toLocaleString()}</h1> : null}
             </div>
           </div>
         </div>
@@ -53,12 +53,12 @@ const Coin = () => {
             </thead>
             <tbody>
               <tr>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_1h_in_currency ? <p>{coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(1)}%</p> : null}</td>
-                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_1h_in_currency ? <p>{coin.market_data.price_change_percentage_1h_in_currency.aud.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_24h_in_currency.aud.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_7d_in_currency.aud.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_14d_in_currency.aud.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_30d_in_currency.aud.toFixed(1)}%</p> : null}</td>
+                <td class="w-36 py-4">{coin.market_data?.price_change_percentage_24h_in_currency ? <p>{coin.market_data.price_change_percentage_1y_in_currency.aud.toFixed(1)}%</p> : null}</td>
               </tr>
             </tbody>
           </table>
@@ -67,15 +67,15 @@ const Coin = () => {
         <div class="w-6/12 mx-auto mt-8 text-center flex justify-around font-light">
           <div>
             <h4 class="text-lg font-semibold">24 Hour Low</h4>
-            {coin.market_data?.low_24h ? <p>${coin.market_data.low_24h.usd.toLocaleString()}</p> : null}
+            {coin.market_data?.low_24h ? <p>${coin.market_data.low_24h.aud.toLocaleString()}</p> : null}
           </div>
           <div>
             <h4 class="text-lg font-semibold">24 Hour High</h4>
-            {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.usd.toLocaleString()}</p> : null}
+            {coin.market_data?.high_24h ? <p>${coin.market_data.high_24h.aud.toLocaleString()}</p> : null}
           </div>
           <div>
             <h4 class="text-lg font-semibold">Market Cap</h4>
-            {coin.market_data?.market_cap ? <p>${coin.market_data.market_cap.usd.toLocaleString()}</p> : null}
+            {coin.market_data?.market_cap ? <p>${coin.market_data.market_cap.aud.toLocaleString()}</p> : null}
           </div>
           <div>
             <h4 class="text-lg font-semibold">Circulating Supply</h4>
@@ -83,8 +83,8 @@ const Coin = () => {
           </div>
         </div>
 
-          <div class="">
-            <h3>About</h3>
+          <div class="w-6/12 mx-auto mt-8 border-2 rounded-xl p-4">
+            <h3 class="text-xl font-bold">About</h3>
             <p dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),
             }}>
