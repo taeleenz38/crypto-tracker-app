@@ -83,7 +83,7 @@ const Coin = () => {
           </div>
         </div>
 
-          <div class="w-6/12 mx-auto mt-8 border-2 rounded-xl p-4">
+          <div class="w-6/12 mx-auto mt-8 mb-4 border-2 rounded-xl p-4">
             <h3 class="text-xl font-bold">About</h3>
             <p dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(coin.description ? coin.description.en : ''),
